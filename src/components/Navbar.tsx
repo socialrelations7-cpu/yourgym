@@ -1,13 +1,21 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Dumbbell } from 'lucide-react';
+import { Menu, X, Dumbbell, Languages } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/context/LanguageContext";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,11 +26,11 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#' },
-    { name: 'Classes', href: '#classes' },
-    { name: 'Membership', href: '#pricing' },
-    { name: 'Trainers', href: '#trainers' },
-    { name: 'Contact', href: '#contact' },
+    { name: t('nav.home'), href: '#' },
+    { name: t('nav.classes'), href: '#classes' },
+    { name: t('nav.membership'), href: '#pricing' },
+    { name: t('nav.trainers'), href: '#trainers' },
+    { name: t('nav.contact'), href: '#contact' },
   ];
 
   return (
@@ -53,16 +61,48 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
-          <Button className="rounded-full px-6">Join Now</Button>
+          
+          <div className="flex items-center gap-4">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="icon" className="rounded-full">
+                  <Languages className="w-5 h-5" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem onClick={() => setLanguage('en')} className={cn(language === 'en' && "bg-muted font-bold")}>
+                  English
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLanguage('el')} className={cn(language === 'el' && "bg-muted font-bold")}>
+                  Ελληνικά
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            
+            <Button className="rounded-full px-6">{t('nav.join')}</Button>
+          </div>
         </div>
 
         {/* Mobile Toggle */}
-        <button 
-          className="md:hidden p-2"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <X /> : <Menu />}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="icon" className="rounded-full">
+                <Languages className="w-5 h-5" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem onClick={() => setLanguage('en')}>English</DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setLanguage('el')}>Ελληνικά</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+          <button 
+            className="p-2"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X /> : <Menu />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -78,7 +118,7 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
-          <Button className="w-full rounded-xl py-6 text-lg">Join Now</Button>
+          <Button className="w-full rounded-xl py-6 text-lg">{t('nav.join')}</Button>
         </div>
       )}
     </nav>

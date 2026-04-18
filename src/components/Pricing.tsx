@@ -5,63 +5,67 @@ import { Check, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-
-const plans = [
-  {
-    name: "Basic",
-    price: "29",
-    description: "Perfect for beginners starting their journey.",
-    features: [
-      { text: "Gym Access (8am - 8pm)", included: true },
-      { text: "Standard Equipment", included: true },
-      { text: "Locker Room Access", included: true },
-      { text: "Free WiFi", included: true },
-      { text: "Personal Trainer", included: false },
-      { text: "Group Classes", included: false },
-    ],
-    popular: false
-  },
-  {
-    name: "Pro",
-    price: "59",
-    description: "Our most popular plan for serious athletes.",
-    features: [
-      { text: "24/7 Gym Access", included: true },
-      { text: "All Equipment Access", included: true },
-      { text: "Locker & Sauna", included: true },
-      { text: "All Group Classes", included: true },
-      { text: "1 PT Session / Month", included: true },
-      { text: "Nutrition Guide", included: true },
-    ],
-    popular: true
-  },
-  {
-    name: "Elite",
-    price: "99",
-    description: "The ultimate fitness experience with full perks.",
-    features: [
-      { text: "24/7 VIP Access", included: true },
-      { text: "Private Training Area", included: true },
-      { text: "Unlimited PT Sessions", included: true },
-      { text: "Recovery & Massage", included: true },
-      { text: "Guest Passes (2/mo)", included: true },
-      { text: "Custom Meal Plans", included: true },
-    ],
-    popular: false
-  }
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 const Pricing = () => {
+  const { t, language } = useLanguage();
+
+  const plans = [
+    {
+      name: language === 'el' ? "Βασικό" : "Basic",
+      price: "29",
+      description: language === 'el' ? "Ιδανικό για αρχάριους που ξεκινούν το ταξίδι τους." : "Perfect for beginners starting their journey.",
+      features: [
+        { text: language === 'el' ? "Πρόσβαση (8πμ - 8μμ)" : "Gym Access (8am - 8pm)", included: true },
+        { text: language === 'el' ? "Βασικός Εξοπλισμός" : "Standard Equipment", included: true },
+        { text: language === 'el' ? "Πρόσβαση σε Αποδυτήρια" : "Locker Room Access", included: true },
+        { text: "Free WiFi", included: true },
+        { text: language === 'el' ? "Προσωπικός Προπονητής" : "Personal Trainer", included: false },
+        { text: language === 'el' ? "Ομαδικά Μαθήματα" : "Group Classes", included: false },
+      ],
+      popular: false
+    },
+    {
+      name: language === 'el' ? "Pro" : "Pro",
+      price: "59",
+      description: language === 'el' ? "Το πιο δημοφιλές πλάνο για σοβαρούς αθλητές." : "Our most popular plan for serious athletes.",
+      features: [
+        { text: language === 'el' ? "24/7 Πρόσβαση" : "24/7 Gym Access", included: true },
+        { text: language === 'el' ? "Πρόσβαση σε όλο τον Εξοπλισμό" : "All Equipment Access", included: true },
+        { text: language === 'el' ? "Αποδυτήρια & Σάουνα" : "Locker & Sauna", included: true },
+        { text: language === 'el' ? "Όλα τα Ομαδικά Μαθήματα" : "All Group Classes", included: true },
+        { text: language === 'el' ? "1 Συνεδρία PT / Μήνα" : "1 PT Session / Month", included: true },
+        { text: language === 'el' ? "Οδηγός Διατροφής" : "Nutrition Guide", included: true },
+      ],
+      popular: true
+    },
+    {
+      name: language === 'el' ? "Elite" : "Elite",
+      price: "99",
+      description: language === 'el' ? "Η απόλυτη εμπειρία fitness με όλα τα προνόμια." : "The ultimate fitness experience with full perks.",
+      features: [
+        { text: language === 'el' ? "24/7 VIP Πρόσβαση" : "24/7 VIP Access", included: true },
+        { text: language === 'el' ? "Ιδιωτικός Χώρος Προπόνησης" : "Private Training Area", included: true },
+        { text: language === 'el' ? "Απεριόριστες Συνεδρίες PT" : "Unlimited PT Sessions", included: true },
+        { text: language === 'el' ? "Αποκατάσταση & Μασάζ" : "Recovery & Massage", included: true },
+        { text: language === 'el' ? "Πάσο Επισκέπτη (2/μήνα)" : "Guest Passes (2/mo)", included: true },
+        { text: language === 'el' ? "Εξατομικευμένα Γεύματα" : "Custom Meal Plans", included: true },
+      ],
+      popular: false
+    }
+  ];
+
   return (
     <section id="pricing" className="py-24">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-primary font-bold uppercase tracking-widest text-sm mb-3">Membership</h2>
+          <h2 className="text-primary font-bold uppercase tracking-widest text-sm mb-3">{t('pricing.subtitle')}</h2>
           <h3 className="text-4xl md:text-5xl font-black italic uppercase tracking-tighter mb-6">
-            Choose Your <span className="text-primary">Plan</span>
+            {language === 'el' ? "Επιλέξτε το " : "Choose Your "}
+            <span className="text-primary">{language === 'el' ? "Πλάνο σας" : "Plan"}</span>
           </h3>
           <p className="text-muted-foreground">
-            Flexible membership options designed to fit your lifestyle and fitness goals. No hidden fees, just results.
+            {t('pricing.desc')}
           </p>
         </div>
 
@@ -76,7 +80,7 @@ const Pricing = () => {
             >
               {plan.popular && (
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground text-xs font-black uppercase tracking-widest px-4 py-1 rounded-full">
-                  Most Popular
+                  {t('pricing.popular')}
                 </div>
               )}
               <CardHeader className="p-8 pb-0">
@@ -84,7 +88,7 @@ const Pricing = () => {
                 <div className="flex items-baseline gap-1 mb-4">
                   <span className="text-4xl font-black">$</span>
                   <span className="text-6xl font-black tracking-tighter">{plan.price}</span>
-                  <span className="text-muted-foreground font-medium">/mo</span>
+                  <span className="text-muted-foreground font-medium">/{language === 'el' ? "μήνα" : "mo"}</span>
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   {plan.description}
@@ -117,7 +121,7 @@ const Pricing = () => {
                   )}
                   variant={plan.popular ? "default" : "outline"}
                 >
-                  Get Started
+                  {t('pricing.getStarted')}
                 </Button>
               </CardFooter>
             </Card>

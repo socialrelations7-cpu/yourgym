@@ -1,15 +1,18 @@
 "use client";
 
 import React from 'react';
-
-const stats = [
-  { label: 'Active Members', value: '2,500+' },
-  { label: 'Expert Trainers', value: '50+' },
-  { label: 'Fitness Classes', value: '120+' },
-  { label: 'Gym Locations', value: '12' },
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 const Stats = () => {
+  const { t } = useLanguage();
+
+  const stats = [
+    { label: t('stats.members'), value: '2,500+' },
+    { label: t('stats.trainers'), value: '50+' },
+    { label: t('stats.classes'), value: '120+' },
+    { label: t('stats.locations'), value: '12' },
+  ];
+
   return (
     <section className="py-12 bg-primary">
       <div className="container mx-auto px-4">
