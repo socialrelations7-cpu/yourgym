@@ -9,10 +9,10 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-transparent z-10" />
         <img 
-          src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop" 
-          alt="Gym Background" 
+          src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=2069&auto=format&fit=crop" 
+          alt="Intense Gym Training" 
           className="w-full h-full object-cover object-center"
         />
       </div>
@@ -27,25 +27,16 @@ const Hero = () => {
             <span className="text-xs font-bold uppercase tracking-wider text-primary">New Year Special: 50% Off</span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black leading-[0.9] mb-4 tracking-tighter uppercase italic">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black leading-[0.9] mb-8 tracking-tighter uppercase italic animate-in fade-in slide-in-from-left duration-1000">
             Unleash Your <br />
             <span className="text-primary">Inner Beast.</span>
           </h1>
-
-          {/* New Image beneath the text */}
-          <div className="mb-8 rounded-2xl overflow-hidden max-w-md border-4 border-primary/20 shadow-2xl animate-in fade-in zoom-in duration-1000">
-            <img 
-              src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1000&auto=format&fit=crop" 
-              alt="Training Session" 
-              className="w-full h-48 object-cover"
-            />
-          </div>
           
-          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-xl leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-xl leading-relaxed animate-in fade-in slide-in-from-left duration-1000 delay-200">
             Experience the ultimate fitness destination. World-class equipment, expert trainers, and a community that pushes you to your limits.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 animate-in fade-in slide-in-from-left duration-1000 delay-300">
             <Button size="lg" className="rounded-full px-8 h-14 text-lg font-bold group">
               Start Your Journey
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -56,7 +47,7 @@ const Hero = () => {
             </Button>
           </div>
 
-          <div className="mt-12 flex flex-wrap gap-6">
+          <div className="mt-12 flex flex-wrap gap-6 animate-in fade-in slide-in-from-bottom duration-1000 delay-500">
             {['24/7 Access', 'Expert Coaches', 'Modern Equipment'].map((item) => (
               <div key={item} className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-primary" />
