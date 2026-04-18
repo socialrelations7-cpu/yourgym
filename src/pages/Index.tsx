@@ -7,6 +7,9 @@ import Stats from '@/components/Stats';
 import Classes from '@/components/Classes';
 import Pricing from '@/components/Pricing';
 import Trainers from '@/components/Trainers';
+import Testimonials from '@/components/Testimonials';
+import FAQ from '@/components/FAQ';
+import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import { MadeWithDyad } from "@/components/made-with-dyad";
 
@@ -20,6 +23,9 @@ const Index = () => {
         <Classes />
         <Pricing />
         <Trainers />
+        <Testimonials />
+        <FAQ />
+        <Contact />
       </main>
       <Footer />
       <MadeWithDyad />
