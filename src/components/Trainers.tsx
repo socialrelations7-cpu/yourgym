@@ -13,7 +13,7 @@ const trainers = [
   {
     name: "Sarah Jenkins",
     role: "HIIT Specialist",
-    image: "https://images.unsplash.com/photo-1548690312-e3b507d17a4d?q=80&w=1974&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=1974&auto=format&fit=crop",
     specialty: "Fat Loss & Conditioning"
   },
   {

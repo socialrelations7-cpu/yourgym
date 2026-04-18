@@ -38,7 +38,7 @@ const Navbar = () => {
             <Dumbbell className="w-6 h-6 text-primary-foreground" />
           </div>
           <span className="text-xl font-black tracking-tighter uppercase italic">
-            Gymania<span className="text-primary">.</span>
+            YOURGYM<span className="text-primary">.</span>
           </span>
         </div>
 

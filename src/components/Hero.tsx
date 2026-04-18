@@ -27,10 +27,19 @@ const Hero = () => {
             <span className="text-xs font-bold uppercase tracking-wider text-primary">New Year Special: 50% Off</span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black leading-[0.9] mb-6 tracking-tighter uppercase italic">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black leading-[0.9] mb-4 tracking-tighter uppercase italic">
             Unleash Your <br />
             <span className="text-primary">Inner Beast.</span>
           </h1>
+
+          {/* New Image beneath the text */}
+          <div className="mb-8 rounded-2xl overflow-hidden max-w-md border-4 border-primary/20 shadow-2xl animate-in fade-in zoom-in duration-1000">
+            <img 
+              src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1000&auto=format&fit=crop" 
+              alt="Training Session" 
+              className="w-full h-48 object-cover"
+            />
+          </div>
           
           <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-xl leading-relaxed">
             Experience the ultimate fitness destination. World-class equipment, expert trainers, and a community that pushes you to your limits.

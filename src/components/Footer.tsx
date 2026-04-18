@@ -16,7 +16,7 @@ const Footer = () => {
                 <Dumbbell className="w-6 h-6 text-primary-foreground" />
               </div>
               <span className="text-2xl font-black tracking-tighter uppercase italic">
-                Gymania<span className="text-primary">.</span>
+                YOURGYM<span className="text-primary">.</span>
               </span>
             </div>
             <p className="text-muted-foreground mb-8 leading-relaxed">
@@ -57,7 +57,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-4">
                 <Mail className="w-5 h-5 text-primary shrink-0" />
-                <span className="text-muted-foreground">hello@gymania.com</span>
+                <span className="text-muted-foreground">hello@yourgym.com</span>
               </li>
             </ul>
           </div>
@@ -73,7 +73,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-          <p>© 2024 Gymania Fitness Club. All rights reserved.</p>
+          <p>© 2024 YOURGYM Fitness Club. All rights reserved.</p>
           <div className="flex gap-8">
             <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>

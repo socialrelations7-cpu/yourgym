@@ -42,12 +42,12 @@ const FAQ = () => {
               Frequently Asked <span className="text-primary">Questions</span>
             </h3>
             <p className="text-muted-foreground text-lg mb-8">
-              Everything you need to know about joining Gymania. Can't find what you're looking for? Feel free to reach out to our support team.
+              Everything you need to know about joining YOURGYM. Can't find what you're looking for? Feel free to reach out to our support team.
             </p>
             <div className="bg-primary/5 p-8 rounded-3xl border border-primary/10">
               <h4 className="font-black uppercase italic mb-2">Still need help?</h4>
               <p className="text-sm text-muted-foreground mb-4">Our team is available 24/7 to assist you with any inquiries.</p>
-              <a href="mailto:support@gymania.com" className="text-primary font-bold hover:underline">support@gymania.com</a>
+              <a href="mailto:support@yourgym.com" className="text-primary font-bold hover:underline">support@yourgym.com</a>
             </div>
           </div>
           
