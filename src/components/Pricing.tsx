@@ -4,6 +4,7 @@ import React from 'react';
 import { Check, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 const plans = [
   {
